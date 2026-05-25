@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code DOM    </title>
+</head>
+<body style = "background-color: black; color: white;">
+    <ul class="language">
+        <li>Javascript</li>
+       
+    </ul>
+</body>
+<script>
+    // normal adding of language in list
+    function addlanguage(langName) {
+        const li = document.createElement("li");
+        li.innerHTML = `${langName}`
+        document.querySelector(".language").appendChild(li)
+        
+    }
+    addlanguage("python")
+    addlanguage("java")
+    
+// adding of lanuage in optimize way
+    function addOptilanguage(langName){
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+    }
+    addOptilanguage("golang")
+    addOptilanguage("cPP")
+//edit with textcontent and replaceWith method
+
+const secondLang = document.querySelector("li:nth-child(2)")
+// secondLang.innerHTML = "mojo"
+const newli = document.createElement("li")
+newli.textContent = 'Mojo'
+secondLang.replaceWith(newli)
+
+// edit with outerhtml
+const firstlang = document.querySelector("li:first-child")
+firstlang.outerHTML= "<li>Typescript</li>"
+
+// remove
+
+const removelang = document.querySelector("li:last-child")
+removelang.remove() 
+</script>
+</html>
